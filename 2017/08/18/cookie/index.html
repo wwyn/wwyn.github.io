@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>cookie | wxp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="wxp">
+	<img src="/favicon.png" alt="wxp"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="http://weibo.com/yumemor/" target="_blank">Weibo</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      cookie
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>是浏览器端的一个存储空间</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>cookie的存储是以域名为单位的，各个域名之间不能相互访问cookie</li>
+<li>每个域名能够在cookie中的存储是有大小限制的(4kb)</li>
+<li>cookie中存储的数据，有时限， 默认浏览器关闭，cookie就会消失</li>
+<li>cookie在每个域名下是分路径存储的，在父级路径中是不能访问到子级路径中的cookie，但是在父级路径中存储的cookie是可以被子级访问，所以一般情况下cookie都存在根目录下</li>
+<li>coookie中存储的信息，每次请求都会携带发送到服务器</li>
+</ol>
+<h2 id="在js中操作cookie"><a href="#在js中操作cookie" class="headerlink" title="在js中操作cookie"></a>在js中操作cookie</h2><h3 id="获取cookie"><a href="#获取cookie" class="headerlink" title="获取cookie"></a>获取cookie</h3><p>可以直接使用<code>document.cookie</code> 属性来获取cookie， cookie的本质是一段字符串，以键值对的方式存储</p>
+<h3 id="存储cookie"><a href="#存储cookie" class="headerlink" title="存储cookie"></a>存储cookie</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">doucment.cookie = <span class="string">"name=张三;age=20"</span>;</div></pre></td></tr></table></figure>
+<p>doucment.cookie被赋值的时候是追加的操作</p>
+<h3 id="设置cookie的过期时间"><a href="#设置cookie的过期时间" class="headerlink" title="设置cookie的过期时间"></a>设置cookie的过期时间</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2017-7-20 10:30:00'</span>);</div><div class="line"><span class="built_in">document</span>.cookie = <span class="string">'name=张三;expires='</span> + time.toGMTString();</div></pre></td></tr></table></figure>
+<p>cookie接受的日期格式是格林威治时间，所以需要使用<code>toGMTString()</code></p>
+<h3 id="封装cookie方法"><a href="#封装cookie方法" class="headerlink" title="封装cookie方法"></a>封装cookie方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置cookie</span></div><div class="line">setCookie (key, value, option) &#123;</div><div class="line"><span class="built_in">document</span>.cookie = <span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;value&#125;</span>;expires=<span class="subst">$&#123;option.expires.toGMTString()&#125;</span>;path=<span class="subst">$&#123;option.path.toGMTString()&#125;</span>`</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</div>
+	<div class="meta split">
+		
+			<span>本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+		
+		<time class="post-date" datetime="2017-08-18T12:19:26.141Z" itemprop="datePublished">2017-08-18</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="cookie" data-title="cookie" data-url="http://yoursite.com/2017/08/18/cookie/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg' alt='xpw'>
+					<div class="media__body">
+						<h4>wxp</h4>
+						<p class='site-description'></p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/yumemor/" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/yumemor" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/yumemor" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+			<span>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次</span>
+		
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+		<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
